@@ -6,11 +6,11 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 21:34:24 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/07/25 21:40:00 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/07/28 21:23:18 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Contact.hpp";
+#include "./Contact.hpp"
 
 Contact:: Contact(std::string firstname , std::string lastname, std::string nickname, std::string darksecret, int number)
 {
@@ -22,7 +22,9 @@ Contact:: Contact(std::string firstname , std::string lastname, std::string nick
 }
 Contact::~Contact ()
 {
-    std::cout << "a contact has been deleted";
+}
+Contact::Contact ()
+{
 }
 void Contact::setFirstName(std::string FirstName)
 {
@@ -40,7 +42,7 @@ void Contact::setDarkSecret(std::string DarkSecret)
 {
     this->DarkSecret = DarkSecret;
 }
-void Contact::setNumber(int Number)
+void Contact::setNumber(std::string Number)
 {
     this->Number = Number;
 }
@@ -60,7 +62,34 @@ std::string Contact::getDarkSecret()
 {
     return DarkSecret;
 }
-int Contact::getNumber()
+std::string Contact::getNumber()
 {
     return Number;
-} 
+}
+
+void Contact::to_string()
+{
+    std::string firstName;
+    std::string lastName;
+    std::string nickName;
+    std::string darkSecret;
+    std::string number;
+
+    firstName = this->FirstName;
+    lastName = this->LastName;
+    nickName = this->NickName;
+    darkSecret = this->DarkSecret;
+    number = this->Number;
+    if (this->FirstName.length() >= 10)
+        firstName = this->FirstName.substr(0, 10).append(".");
+    if (this->LastName.length() >= 10)
+        lastName = this->LastName.substr(0, 10).append(".");
+    if (this->NickName.length() >= 10)
+        nickName = this->NickName.substr(0, 10).append(".");
+    if (this->DarkSecret.length() >= 10)
+        darkSecret = this->DarkSecret.substr(0, 10).append(".");
+    if (this->Number.length() >= 10)
+        number = this->Number.substr(0, 10).append(".");
+        
+    std::cout << "| name = " << firstName << " | lastName = " << lastName << " | nickName = " << nickName << " | darckSecret = " << darkSecret << " | number = " << number << " |"<< std::endl;
+}
