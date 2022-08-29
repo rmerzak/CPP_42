@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 20:51:07 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/07/28 19:50:51 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:25:52 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,4 @@ class Contact {
         std::string getNumber();
         void        to_string();
 };
+

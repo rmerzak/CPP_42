@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 20:26:06 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/07/25 20:46:37 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/08/29 18:57:15 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
     int i;
     int j;
-    
+
     i = 1;
     if (argc == 1)
     {
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
         {
             j = 0;
             while (argv[i][j])
-            {   
+            {
                 std::cout << (char)std::toupper(argv[i][j]);
                 j++;
             }
