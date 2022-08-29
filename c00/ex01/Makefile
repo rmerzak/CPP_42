@@ -2,9 +2,9 @@ NAME = phone
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILE = main.cpp Contact.cpp PhoneBook.cpp 
+FILE = main.cpp Contact.cpp PhoneBook.cpp
 
 OBJ = $(FILE:%.cpp=%.o)
 
