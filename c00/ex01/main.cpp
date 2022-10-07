@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 15:07:32 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/08/29 19:00:44 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/10/07 21:07:10 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,14 @@ int main()
         std::cout << "    to exit(0) a contact enter EXIT" <<std::endl;
         std::cout << "chose = ";
         getline(std::cin, choix);
-        if (std::cin.good() == false)
-            exit(0);
-        while(choix.length() == 0)
-        {
-            getline(std::cin, choix);
-            if (choix.length() == 0)
-                continue ;
-            if (std::cin.good() == false)
-                exit(0);
-        }
+        if (std::cin.eof())
+            return (0);
         if (!choix.compare("ADD"))
             phone.ADD();
-        if (!choix.compare("SEARCH"))
+        else if (!choix.compare("SEARCH"))
             phone.SEARCH();
-        if (!choix.compare("EXIT"))
+        else if(!choix.compare("EXIT"))
             break ;
     }
+    return 0;
 }

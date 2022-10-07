@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 21:34:24 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/08/29 19:39:08 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/10/07 20:25:26 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,5 @@ void Contact::to_string()
         darkSecret = this->DarkSecret.substr(0, 9).append(".");
     if (this->Number.length() >= 10)
         number = this->Number.substr(0, 9).append(".");
-    std::cout << "|" << std::setw(10) << firstName << "|" << std::setw(10) << lastName  << "|" << std::setw(10) << nickName  << "|"  << std::setw(10) << number << "|" <<std::endl;
+    std::cout << "|" << std::setw(10) << firstName << "|" << std::setw(10) << lastName  << "|" << std::setw(10) << nickName  << "|" <<std::endl;
 }
