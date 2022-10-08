@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 13:42:59 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/10/08 16:54:37 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/10/08 17:11:28 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ Account::Account( void )
 }
 Account::~Account( void )
 {
-
+    Account::_displayTimestamp();
+    std::cout << "index:" <<this->_accountIndex << ";amount:" <<this->_amount << ";closed" <<std::endl;
 }
 
 int Account::getNbAccounts( void )
@@ -99,15 +100,22 @@ int Account::checkAmount( void ) const
 bool Account::makeWithdrawal( int withdrawal)
 {
     int temp;
+    temp = this->_amount;
     if (checkAmount() && this->_amount > withdrawal)
     {
-        temp = this->_amount;
         this->_amount -= withdrawal;
-        this->_nbWithdrawals--;
+        this->_nbWithdrawals++;
+        _totalNbWithdrawals++;
+        this->_totalAmount -= withdrawal;
+         Account::_displayTimestamp();
+         std::cout << "index:" << this->_accountIndex << ";p_amount:" << temp << ";withdrawal:" << withdrawal << ";amount:" << this->_amount << ";nb_withdrawals:" <<this->_nbWithdrawals << std::endl;
+        return (true);
     }
     else
     {
-        
+        Account::_displayTimestamp();
+        std::cout << "index:" << this->_accountIndex << ";p_amount:" << temp << ";withdrawal:refused"<< std::endl;
+        return (false);
     }
 }
 
