@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 13:42:59 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/10/08 17:11:28 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/10/08 17:19:33 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,26 +118,6 @@ bool Account::makeWithdrawal( int withdrawal)
         return (false);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 void Account::_displayTimestamp(void)
 {
