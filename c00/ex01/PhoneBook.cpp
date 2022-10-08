@@ -6,81 +6,13 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 21:45:00 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/10/07 21:30:53 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/10/08 09:46:59 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <stdlib.h>
 #include <iomanip>
-
-int ipow(int base, int exp)
-{
-    int result = 1;
-    for (;;)
-    {
-        if (exp & 1)
-            result *= base;
-        exp >>= 1;
-        if (!exp)
-            break;
-        base *= base;
-    }
-
-    return result;
-}
-
-int charToDigit(char ch) {
-    switch (ch) {
-        case '0':
-            return 0;
-            break;
-       case '1':
-            return 1;
-            break;
-        case '2':
-            return 2;
-            break;
-        case '3':
-            return 3;
-            break;
-        case '4':
-            return 4;
-            break;
-        case '5':
-            return 5;
-            break;
-        case '6':
-            return 6;
-            break;
-        case '7':
-            return 7;
-            break;
-        case '8':
-            return 8;
-            break;
-        case '9':
-            return 9;
-            break;
-        default:
-            throw "0-9";
-            break;
-    }
-};
-
-int ft_stoi(const char* string) {
-    int basenum = 0;
-    int pos = ipow(10, strlen(string)-1);
-    const int len = strlen(string);
-    for (int i = 0; i<len; i++) {
-        basenum += charToDigit(string[i])*pos;
-        pos /= 10;
-    };
-    return basenum;
-};
-
-
-
+#include <sstream>
 
 PhoneBook::PhoneBook()
 {
@@ -149,23 +81,15 @@ void PhoneBook::DISPLAY()
 void PhoneBook::SEARCH()
 {
     int i;
+    std::stringstream in;
     std::string input;
 
-    DISPLAY();
     i = -1;
+    DISPLAY();
     std::cout << "enter the id to look for i = ";
-    std::cin >> input;
-    if (input.length() >= 2 || input[0] == '9')
-    {
-        return ;
-    }
-    try {
-        i = stoi(input);
-    }
-    catch (...)
-    {
-        std::cout<<"Conversion failure"<<std::endl;
-    }
+
+    in << input;
+    in >> i;
     if (i > 0 && i < 9)
     {
         std::cout << "FirstName: " << members[i - 1].getFirstName()<<std::endl;
@@ -179,5 +103,3 @@ void PhoneBook::SEARCH()
        return ;
     }
 }
-
-
