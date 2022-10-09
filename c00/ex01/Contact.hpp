@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 20:51:07 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/08/29 19:25:52 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/10/09 10:03:12 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Contact {
         std::string Number;
     public:
         Contact(std::string firstname, std::string lastname, std::string nickname, std::string darksecret, int number);
-        Contact();
+        Contact( void );
         ~Contact ();
         void setFirstName(std::string FirstName);
         void setLastName(std::string LastName);

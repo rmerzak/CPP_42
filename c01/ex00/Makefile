@@ -1,10 +1,10 @@
-NAME = phone
+NAME = Zombie
 
 CC = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILE = main.cpp Contact.cpp PhoneBook.cpp
+FILE = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp 
 
 OBJ = $(FILE:%.cpp=%.o)
 

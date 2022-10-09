@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 13:42:59 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/10/08 17:19:33 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/10/09 12:01:09 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,11 +124,6 @@ void Account::_displayTimestamp(void)
 	std::chrono::time_point<std::chrono::system_clock> now = std::chrono::system_clock::now();
 	std::time_t time_now = std::chrono::system_clock::to_time_t(now);
 
-	tm utc_tm = *localtime(&time_now);
-	std::cout << std::setfill('0') << "[" << (utc_tm.tm_year + 1900)
-      << std::setw(2) << utc_tm.tm_mon + 1
-      << std::setw(2) << utc_tm.tm_mday << "_"
-      << std::setw(2) << utc_tm.tm_hour
-      << std::setw(2) << utc_tm.tm_min
-      << std::setw(2) << utc_tm.tm_sec << "] ";
+	tm time = *localtime(&time_now);
+	std::cout << std::setfill('0') << "[" << (time.tm_year + 1900) << std::setw(2) << time.tm_mon + 1 << std::setw(2) << time.tm_mday << "_" << std::setw(2) << time.tm_hour << std::setw(2) << time.tm_min << std::setw(2) << time.tm_sec << "] ";
 }

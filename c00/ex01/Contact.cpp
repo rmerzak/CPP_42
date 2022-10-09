@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 21:34:24 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/10/07 20:25:26 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/10/09 10:03:05 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Contact:: Contact(std::string firstname , std::string lastname, std::string nick
 Contact::~Contact ()
 {
 }
-Contact::Contact ()
+Contact::Contact ( void )
 {
 }
 void Contact::setFirstName(std::string FirstName)

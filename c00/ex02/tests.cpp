@@ -12,62 +12,6 @@
 #include <functional>
 #include "Account.hpp"
 
-/*
-int		main( void ) {
-	Account Rabi1(42);
-	Account Rabi2(54);
-	Account Rabi3(957);
-	Account Rabi4(432);
-	Account Rabi5(1234);
-	Account Rabi6(0);
-	Account Rabi7(754);
-	Account Rabi8(16576);
-	Rabi1.displayAccountsInfos();
-	Rabi1.displayStatus();
-	Rabi2.displayStatus();
-	Rabi3.displayStatus();
-	Rabi4.displayStatus();
-	Rabi5.displayStatus();
-	Rabi6.displayStatus();
-	Rabi7.displayStatus();
-	Rabi8.displayStatus();
-	Rabi1.makeDeposit(5);
-	Rabi2.makeDeposit(765);
-	Rabi3.makeDeposit(564);
-	Rabi4.makeDeposit(2);
-	Rabi5.makeDeposit(87);
-	Rabi6.makeDeposit(23);
-	Rabi7.makeDeposit(9);
-	Rabi8.makeDeposit(20);
-	Rabi1.displayAccountsInfos();
-	Rabi1.displayStatus();
-	Rabi2.displayStatus();
-	Rabi3.displayStatus();
-	Rabi4.displayStatus();
-	Rabi5.displayStatus();
-	Rabi6.displayStatus();
-	Rabi7.displayStatus();
-	Rabi8.displayStatus();
-	Rabi1.makeWithdrawal(47);
-	Rabi2.makeWithdrawal(34);
-	Rabi3.makeWithdrawal(657);
-	Rabi4.makeWithdrawal(4);
-	Rabi5.makeWithdrawal(76);
-	Rabi6.makeWithdrawal(23);
-	Rabi7.makeWithdrawal(657);
-	Rabi8.makeWithdrawal(7654);
-	Rabi1.displayAccountsInfos();
-	Rabi1.displayStatus();
-	Rabi2.displayStatus();
-	Rabi3.displayStatus();
-	Rabi4.displayStatus();
-	Rabi5.displayStatus();
-	Rabi6.displayStatus();
-	Rabi7.displayStatus();
-	Rabi8.displayStatus();
-	return 0;
-}*/
-
 int		main( void ) {
 
 	typedef std::vector<Account::t>							  accounts_t;

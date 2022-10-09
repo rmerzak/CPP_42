@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/25 20:51:14 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/10/09 10:10:41 by rmerzak          ###   ########.fr       */
+/*   Created: 2022/10/09 15:15:03 by rmerzak           #+#    #+#             */
+/*   Updated: 2022/10/09 15:51:29 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include <iostream>
-#include <string>
+#include "Zombie.hpp"
 
-class PhoneBook {
-    public:
-        int counter;
-        int index;
-        Contact members[8];
-        PhoneBook();
-        ~PhoneBook();
-        void ADD();
-        void SEARCH();
-        void DISPLAY();
-};
+Zombie* newZombie( std::string name) {
+    Zombie* newZombie = new Zombie(name);
+    return (newZombie);
+}

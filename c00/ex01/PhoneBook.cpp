@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 21:45:00 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/10/08 13:38:01 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/10/09 12:10:23 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void PhoneBook::SEARCH()
     getline(std::cin, input);
     in << input;
     in >> i;
-    if (i > 0 && i < 9)
+    if (i > 0 && i < 9 && i <= this->index)
     {
         std::cout << "FirstName: " << members[i - 1].getFirstName()<<std::endl;
         std::cout << "Lastname: " << members[i - 1].getLastname()<<std::endl;

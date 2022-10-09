@@ -6,12 +6,10 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 FILE = ./megaphone.cpp
 
-OBJ = $(FILE:%.cpp=%.o)
-
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(FILE)
+	$(CC) $(FLAGS) $(FILE) -o $(NAME)
 
 clean:
 	rm -rf $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 20:26:06 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/08/29 18:57:15 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/10/09 09:46:26 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int main(int argc, char **argv)
             j = 0;
             while (argv[i][j])
             {
+                // touper function return ASCII code for uppercase alphabets
+                // for non alphabets => ascii code of the input
                 std::cout << (char)std::toupper(argv[i][j]);
                 j++;
             }
