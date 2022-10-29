@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/09 15:14:58 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/10/10 15:19:42 by rmerzak          ###   ########.fr       */
+/*   Created: 2022/10/09 17:19:09 by rmerzak           #+#    #+#             */
+/*   Updated: 2022/10/09 18:03:50 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombie.hpp"
 
-class Zombie {
-    private:
-        std::string name;
-    public:
-        Zombie( std::string name );
-        Zombie();
-        ~Zombie();
-        void announce( void );
-};
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
+int main( void )
+{
+    Zombie  *Allocate;
+    int     N = 5;
+    int     i = 0;
+    Allocate = zombieHorde(N, "hello");
+    while (i < N)
+    {
+        Allocate[i].announce();
+        i++;
+    }
+    delete [] Allocate;
+}
