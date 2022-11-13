@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:39:45 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/11/13 18:05:38 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/11/13 18:20:15 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@ void Harl::warning( void ) {
 void Harl::error( void ) {
     std::cout << "This is unacceptable ! I want to speak to the manager now" << std::endl;
 }
+
+void Harl::none( void ) {
+}
+
 void Harl::complain(std::string level) {
-    int i = -1;
-    void (Harl::*function[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    int i;
+    void (Harl::*function[])(void) = {&Harl::none, &Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     i = (level == "DEBUG") * 1 + (level == "INFO") * 2 + (level == "WARNING") * 3  + (level == "ERROR") * 4;
-    if (i == 0) {
-        return ;
-    }
-    (this->*function[i - 1])();
+    (this->*function[i])();
 }
