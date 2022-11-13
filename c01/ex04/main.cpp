@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:24:38 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/11/12 20:21:49 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/11/13 02:00:00 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,36 @@
 
 int main(int argc, char **argv)
 {
-    //std::size_t temp;
     std::string myText;
-    int i;
-    if (argc == 4)
+    int i, s;
+    if (argc != 4 || !std::string(argv[2]).length() || !std::string(argv[3]).length())
+    {
+        std::cout << "error params" << std::endl;
+        return 0;
+    }
+    else
     {
         std::ifstream MyFile(argv[1]);
-        std::ofstream MyReplaceFile(("file.replace"));
-        if (!strcmp(argv[2], argv[3])) {
-            return 0;
+        std::ofstream MyReplaceFile((std::string(argv[1]) + ".replace").c_str());
+        if (MyFile.fail() || MyReplaceFile.fail())
+        {
+            std::cout << "error file" << std::endl;
+            return (1);
         }
         while (getline(MyFile, myText))
         {
             i = 0;
+            s = 0;
             while (i != -1)
             {
-                i = myText.find(argv[2]);
-                if(i != -1) {
+                i = myText.find(argv[2], s);
+                if(i != -1 && std::string(argv[2]) == std::string(argv[3])) {
+                    s = i + std::string(argv[2]).length();        
+                }
+                if (i != -1 && std::string(argv[2]) != std::string(argv[3]))
+                {
                     myText.erase(i, 5);
-                    myText.insert(i, argv[3]);    
+                    myText.insert(i, argv[3]);
                 }
             }
             if(!MyFile.eof())
@@ -48,6 +59,7 @@ int main(int argc, char **argv)
         MyFile.close();
         MyReplaceFile.close();
     }
+    return (0);
 }
 
 // find => erase ==> insert
