@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:39:45 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/11/13 18:36:08 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/11/14 10:50:41 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,11 @@ void Harl::complain(std::string level) {
     switch (i)
     {
         case 1:
-            (this->*function[i])();
-            i++;
+            (this->*function[i++])();
         case 2:
-            (this->*function[i])();
-            i++;
+            (this->*function[i++])();
         case 3:
-            (this->*function[i])();
-            i++;
+            (this->*function[i++])();
         case 4:
             (this->*function[i])();
             break;
