@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 20:00:38 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/11/20 16:53:59 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/11/20 17:01:13 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ public:
     Fixed operator--(int);
     static const Fixed &min(const Fixed &obj1, const Fixed &obj2);
     static const  Fixed &max(const Fixed &obj1, const Fixed &obj2);
-    // static Fixed &min(Fixed &obj1, Fixed &obj2);
-    // static Fixed &max(Fixed &obj1, Fixed &obj2);
+    static Fixed &min(Fixed &obj1, Fixed &obj2);
+    static Fixed &max(Fixed &obj1, Fixed &obj2);
 };
