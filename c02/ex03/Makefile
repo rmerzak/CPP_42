@@ -4,7 +4,7 @@ CC = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILE = main.cpp Fixed.cpp Point.cpp
+FILE = main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJ = $(FILE:%.cpp=%.o)
 

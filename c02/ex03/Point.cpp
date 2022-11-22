@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 17:39:23 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/11/20 23:35:36 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/11/22 19:12:46 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,16 @@ Point:: Point( Fixed const x, Fixed const y): x(x),y(y)
 
 Point::~Point()
 {
-    std::cout << "Destructor called" << std::endl;
 };
 
-Fixed const Point::getX() {
+// Point::Point(const Point &P) {
+//     this->x = P.x;
+//     this->y = P.y;
+// }
+
+Fixed  Point::getX() const{
     return (this->x);
 }
-Fixed const Point::getY() {
+Fixed  Point::getY() const {
     return (this->y);
 }

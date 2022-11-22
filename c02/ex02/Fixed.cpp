@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 20:00:41 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/11/20 17:01:36 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/11/22 21:16:04 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ Fixed Fixed::operator*(Fixed const &obj)
 Fixed Fixed::operator/(Fixed const &obj)
 {
     Fixed res;
-    res.num = (this->num / obj.num) * (1 << nbits);
+    res.num = ((float)this->num / obj.num) * (1 << nbits);
     return res;
 }
 
