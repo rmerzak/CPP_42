@@ -6,12 +6,12 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 20:00:41 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/11/19 21:01:42 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/11/19 22:50:00 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
+#include <math.h>
 Fixed::Fixed()
 {
     this->num = 0;
@@ -25,8 +25,12 @@ Fixed::~Fixed()
 
 Fixed::Fixed(int n)
 {
-    this->num = n;
+    this->num = n * (1 << 8);
 }
+Fixed::Fixed(const float num) {
+    this->num = roundf(num * (1 << 8));
+}
+
 
 Fixed::Fixed(const Fixed &p)
 {
@@ -48,4 +52,15 @@ int Fixed::getRawBits(void) const
 {
     std::cout << "getRawBits member function called" << std::endl;
     return this->num;
+}
+int Fixed::toInt( void ) const {
+    return ((int)this->num / (1 << 8));
+}
+float Fixed::toFloat( void ) const {
+    return ((float)this->num / (1 << 8));
+}
+
+std::ostream &operator<<(std::ostream &output, const Fixed &D) {
+    output << D.toFloat();
+    return output;
 }

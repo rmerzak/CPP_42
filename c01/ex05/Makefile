@@ -4,7 +4,7 @@ CC = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILE = main.cpp Harl.hpp Harl.cpp
+FILE = main.cpp Harl.cpp
 
 OBJ = $(FILE:%.cpp=%.o)
 

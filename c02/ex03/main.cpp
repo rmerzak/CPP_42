@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 20:00:38 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/11/19 20:56:32 by rmerzak          ###   ########.fr       */
+/*   Created: 2022/11/13 20:00:44 by rmerzak           #+#    #+#             */
+/*   Updated: 2022/11/22 21:13:31 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Point.hpp"
 #include <iostream>
-
-class Fixed {
-    private:
-        int num;
-        const static int nbits = 8;
-    public:
-        Fixed();
-        Fixed(int num);
-        Fixed(const Fixed &p);
-        ~Fixed();
-        void operator = (const Fixed &D);
-        int getRawBits(void) const;
-        void setRawBits(int const raw);
-};
+int main(void)
+{
+    Point const P(1,1);
+    Point const A(-2,0);
+    Point const B(2,0);
+    Point const C(0,2);
+    bsp(A,B,C,P);
+}
