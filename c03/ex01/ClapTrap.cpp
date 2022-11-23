@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 20:22:02 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/11/23 23:10:49 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/11/23 23:18:48 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,21 @@ ClapTrap::ClapTrap()
     std::cout << "Default constructor called " << std::endl;
 }
 
+ClapTrap::ClapTrap(std::string name, int HitPoints, int EnergyPoint, int AtackDamage)
+{
+    this->name = name;
+    this->HitPoints = HitPoints;
+    this->EnergyPoint = EnergyPoint;
+    this->AtackDamage = AtackDamage;
+}
+
+ClapTrap::ClapTrap(int HitPoints, int EnergyPoint, int AtackDamage)
+{
+    this->HitPoints = HitPoints;
+    this->EnergyPoint = EnergyPoint;
+    this->AtackDamage = AtackDamage;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
     this->name = name;
@@ -27,14 +42,6 @@ ClapTrap::ClapTrap(std::string name)
     this->EnergyPoint = 10;
     this->AtackDamage = 0;
     std::cout << "constructor by name is called " << std::endl;
-}
-
-ClapTrap::ClapTrap(std::string name, int HitPoints, int EnergyPoint, int AtackDamage)
-{
-    this->name = name;
-    this->HitPoints = HitPoints;
-    this->EnergyPoint = EnergyPoint;
-    this->AtackDamage = AtackDamage;
 }
 
 ClapTrap::~ClapTrap()

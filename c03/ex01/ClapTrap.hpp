@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 20:22:06 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/11/23 23:11:00 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/11/23 23:19:06 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ private:
 public:
     ClapTrap(std::string name);
     ClapTrap(std::string name, int HitPoints, int EnergyPoint, int AtackDamage);
+    ClapTrap(int HitPoints, int EnergyPoint, int AtackDamage);
     ClapTrap();
     ClapTrap(const ClapTrap &D);
     void operator=(const ClapTrap &D);
