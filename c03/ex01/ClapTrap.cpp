@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 20:22:02 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/11/23 23:18:48 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/11/24 22:26:34 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
+    this->name = "Default";
     this->HitPoints = 10;
     this->EnergyPoint = 10;
     this->AtackDamage = 0;
@@ -70,7 +71,6 @@ void ClapTrap::attack(const std::string &target)
     if (this->EnergyPoint > 0)
     {
         std::cout << "ClapTrap " << this->name << " attacks " << target << " ,causing " << this->AtackDamage << " points of damage!" << std::endl;
-        ;
         this->EnergyPoint--;
     }
 }
@@ -86,19 +86,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
-{ /*
-     if (amount - this->HitPoints >= 0)
-     {
-         std::cout << "ClapTrap "
-                   << "is dead!" << std::endl;
-         this->HitPoints = 0;
-     }
-     else if (this->HitPoints - amount > 0)
-     {
-         this->HitPoints -= amount;
-         std::cout << "ClapTrap " << this->name << " take Damage " << amount << " of hitpoint!" << std::endl;
-     }*/
-
+{
     if (this->HitPoints > 0)
     {
         this->HitPoints -= amount;

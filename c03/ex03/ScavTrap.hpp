@@ -6,7 +6,7 @@
 /*   By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 23:00:59 by rmerzak           #+#    #+#             */
-/*   Updated: 2022/11/24 22:43:28 by rmerzak          ###   ########.fr       */
+/*   Updated: 2022/11/23 23:25:30 by rmerzak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ public:
     ScavTrap(std::string name);
     ScavTrap(const ScavTrap &D);
     void operator=(const ScavTrap &D);
-    ~ScavTrap(); /*check this -virtual-*/
+    ~ScavTrap();
     void guardGate();
     void attack(const std::string &target);
 };
